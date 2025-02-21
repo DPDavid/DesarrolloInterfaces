@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="903.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-background-color: black;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.final_di.menuPrincipalController">
+   <children>
+      <ImageView fitHeight="497.0" fitWidth="887.0" layoutX="10.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../contenido/pexels-pixabay-260922.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnCliente" layoutX="112.0" layoutY="407.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 6;" text="Clientes" onAction="#btnIrCliente">
+         <font>
+            <Font name="Segoe Script Bold" size="26.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7200000286102295" green="0.5056800246238708" blue="0.04320000112056732" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.024054982817869344">
+                     <color>
+                        <Color red="0.7200000286102295" green="0.5056800246238708" blue="0.04320000112056732" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.49808429118773945">
+                     <color>
+                        <Color red="1.0" green="0.843137264251709" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7215686440467834" green="0.5176470875740051" blue="0.04313725605607033" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+         <effect>
+            <Bloom threshold="0.09" />
+         </effect></Button>
+      <Button fx:id="btnProductos" layoutX="363.0" layoutY="407.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="178.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 6;" text="Productos" onAction="#btnIrProductos">
+         <font>
+            <Font name="Segoe Script Bold" size="26.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.843137264251709" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5555555555555556">
+                     <color>
+                        <Color red="0.7215686440467834" green="0.5176470875740051" blue="0.04313725605607033" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7215686440467834" green="0.5176470875740051" blue="0.04313725605607033" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+         <effect>
+            <Bloom threshold="0.09" />
+         </effect></Button>
+      <Button fx:id="btnPedidos" layoutX="614.0" layoutY="407.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="167.0" style="-fx-background-color: transparetn; -fx-border-color: white; -fx-border-radius: 6;" text="Pedidos" onAction="#btnIrPedidos">
+         <font>
+            <Font name="Segoe Script Bold" size="26.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.843137264251709" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5363984674329502">
+                     <color>
+                        <Color red="0.7200000286102295" green="0.5169600248336792" blue="0.04320000112056732" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7200000286102295" green="0.5169600248336792" blue="0.04320000112056732" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+         <effect>
+            <Bloom threshold="0.09" />
+         </effect></Button>
+      <Label layoutX="533.0" prefHeight="210.0" prefWidth="350.0" text="Restaurante &#10;Sr'Pérez">
+         <font>
+            <Font name="Segoe Script" size="50.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.843137264251709" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007662835249042145">
+                     <color>
+                        <Color red="1.0" green="0.843137264251709" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7215686440467834" green="0.5176470875740051" blue="0.04313725605607033" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

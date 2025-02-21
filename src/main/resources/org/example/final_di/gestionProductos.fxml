@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="771.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-background-color: black;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.final_di.gestionProductosController">
+    <children>
+        <ImageView fitHeight="509.0" fitWidth="753.0" layoutX="8.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../contenido/wood-texture-background-wood-planks-or-wood-wall-free-photo.jpg" />
+            </image></ImageView>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="68.0" layoutY="-26.0" prefHeight="210.0" prefWidth="636.0" text="Gestión de Productos">
+            <font>
+                <Font name="Segoe Script" size="50.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color green="0.20000000298023224" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.007662835249042145">
+                            <color>
+                                <Color green="0.24316546320915222" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+            <effect>
+                <Bloom />
+            </effect>
+        </Label>
+        <Button fx:id="btnAgregar" layoutX="90.0" layoutY="363.0" mnemonicParsing="false" onAction="#abrirFormularioEliminar" prefHeight="66.0" prefWidth="178.0" style="-fx-background-color: reansparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 6; -fx-border-width: 2;" text="Eliminar">
+            <font>
+                <Font name="Segoe Script Bold" size="26.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color green="0.20000000298023224" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.007662835249042145">
+                            <color>
+                                <Color green="0.24316546320915222" blue="1.0" />
+                            </color>
+                        </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+            <cursor>
+                <Cursor fx:constant="CLOSED_HAND" />
+            </cursor>
+            <effect>
+                <Bloom threshold="0.09" />
+            </effect></Button>
+        <Button layoutX="90.0" layoutY="214.0" mnemonicParsing="false" onAction="#abrirFormularioAgregar" prefHeight="66.0" prefWidth="178.0" style="-fx-background-color: reansparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 6; -fx-border-width: 2;" text="Agregar">
+            <font>
+                <Font name="Segoe Script Bold" size="26.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color green="0.20000000298023224" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.007662835249042145">
+                            <color>
+                                <Color green="0.24316546320915222" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+            <cursor>
+                <Cursor fx:constant="CLOSED_HAND" />
+            </cursor>
+            <effect>
+                <Bloom threshold="0.09" />
+            </effect>
+        </Button>
+        <Button layoutX="497.0" layoutY="363.0" mnemonicParsing="false" onAction="#abrirFormularioListar" prefHeight="66.0" prefWidth="178.0" style="-fx-background-color: reansparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 6; -fx-border-width: 2;" text="Listar">
+            <font>
+                <Font name="Segoe Script Bold" size="26.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color green="0.20000000298023224" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.007662835249042145">
+                            <color>
+                                <Color green="0.24316546320915222" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+            <cursor>
+                <Cursor fx:constant="CLOSED_HAND" />
+            </cursor>
+            <effect>
+                <Bloom threshold="0.09" />
+            </effect>
+        </Button>
+        <Button layoutX="497.0" layoutY="214.0" mnemonicParsing="false" onAction="#abrirFormularioModificar" prefHeight="66.0" prefWidth="178.0" style="-fx-background-color: reansparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 6; -fx-border-width: 2;" text="Editar">
+            <font>
+                <Font name="Segoe Script Bold" size="26.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color green="0.20000000298023224" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.007662835249042145">
+                            <color>
+                                <Color green="0.24316546320915222" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+            <cursor>
+                <Cursor fx:constant="CLOSED_HAND" />
+            </cursor>
+            <effect>
+                <Bloom threshold="0.09" />
+            </effect>
+        </Button>
+        <Button fx:id="btnSalir" layoutX="342.0" layoutY="412.0" mnemonicParsing="false" onAction="#volverAlMenu" prefHeight="26.0" prefWidth="89.0" style="-fx-background-color: transparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 6; -fx-border-width: 2;" text="Salir">
+            <font>
+                <Font name="Segoe Script Bold" size="16.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color green="0.20000000298023224" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.007662835249042145">
+                            <color>
+                                <Color green="0.24316546320915222" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+            <cursor>
+                <Cursor fx:constant="CLOSED_HAND" />
+            </cursor>
+            <effect>
+                <Bloom threshold="0.09" />
+            </effect>
+        </Button>
+    </children>
+</AnchorPane>

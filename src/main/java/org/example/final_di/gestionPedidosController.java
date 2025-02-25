@@ -32,29 +32,24 @@
             ventanaAgregar.initModality(Modality.APPLICATION_MODAL);
             ventanaAgregar.setTitle("Agregar Pedido");
 
-            // ComboBox para Cliente (solo nombre)
             Label labelCliente = new Label("Cliente:");
             ComboBox<String> comboCliente = new ComboBox<>();
             List<Cliente> listaClientes = new ClienteRepository().obtenerTodosLosClientes();
             comboCliente.getItems().addAll(listaClientes.stream().map(Cliente::getNombre).toList());
 
-            // ComboBox para Productos (solo nombre)
             Label labelProductos = new Label("Productos:");
             ComboBox<String> comboProducto = new ComboBox<>();
             List<Productos> listaProductos = new ProductosRepository().obtenerTodosLosProductos();
             comboProducto.getItems().addAll(listaProductos.stream().map(Productos::getNombre).toList());
 
-            // ComboBox para Estado
             Label labelEstado = new Label("Estado:");
             ComboBox<String> comboEstado = new ComboBox<>();
             comboEstado.getItems().addAll("Pendiente", "En preparación", "Entregado");
             comboEstado.setValue("Pendiente");
 
-            // Campo de texto para Cantidad
             Label labelCantidad = new Label("Cantidad:");
             TextField campoCantidad = new TextField();
 
-            // Botón Guardar
             Button botonGuardar = new Button("Guardar");
             botonGuardar.setOnAction(e -> {
                 String nombreCliente = comboCliente.getValue();
@@ -62,7 +57,6 @@
                 String cantidadTexto = campoCantidad.getText();
                 String estado = comboEstado.getValue();
 
-                // Validaciones
                 if (nombreCliente == null || nombreProducto == null || cantidadTexto.isEmpty()  || estado.isEmpty()) {
                     mostrarAlerta("Error", "Por favor, rellene todos los campos.", Alert.AlertType.ERROR);
                     return;
@@ -72,7 +66,6 @@
                     return;
                 }
 
-                // Obtener Cliente y Producto seleccionados
                 Cliente clienteSeleccionado = listaClientes.stream()
                         .filter(c -> c.getNombre().equals(nombreCliente))
                         .findFirst()
@@ -88,25 +81,21 @@
                     return;
                 }
 
-                // Crear Pedido y Detalle
                 int cantidad = Integer.parseInt(cantidadTexto);
-
                 LocalDateTime fechaHoraPedido = LocalDateTime.now();
+                double subtototal = cantidad * productoSeleccionado.getPrecio();
 
-                Pedido pedido = new Pedido(clienteSeleccionado, fechaHoraPedido,0.0 ,estado);
+                Pedido pedido = new Pedido(clienteSeleccionado, fechaHoraPedido,subtototal ,estado);
                 pedido.addDetalle(new PedidoDetalle(pedido, productoSeleccionado, cantidad));
 
-                // Guardar Pedido
                 PedidoRepository pedidoRepository = new PedidoRepository();
                 pedidoRepository.guardarPedido(pedido);
                 ventanaAgregar.close();
             });
 
-            // Botón Cancelar
             Button botonCancelar = new Button("Cancelar");
             botonCancelar.setOnAction(e -> ventanaAgregar.close());
 
-            // Diseño de la Ventana
             VBox layout = new VBox(10);
             HBox hBox = new HBox(10);
             hBox.getChildren().addAll(botonGuardar, botonCancelar);

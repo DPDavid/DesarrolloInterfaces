@@ -29,19 +29,6 @@ public class ProductosRepository {
         }
     }
 
-    public Productos obtenerProductoPorId(int id) {
-        Session session = factory.getCurrentSession();
-        Productos productos = null;
-        try {
-            session.beginTransaction();
-            productos = session.get(Productos.class, id);
-            session.getTransaction().commit();
-        } finally {
-            session.close();
-        }
-        return productos;
-    }
-
     public void actualizarProductoPorId(int id, String nuevoNombre, String nuevaCategoria , float nuevoPrecio, String nuevoDisponible) {
         Session session = factory.getCurrentSession();
         try {

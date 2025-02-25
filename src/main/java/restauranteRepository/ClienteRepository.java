@@ -30,19 +30,6 @@ public class ClienteRepository {
         }
     }
 
-    public Cliente obtenerClientePorId(int id) {
-        Session session = factory.getCurrentSession();
-        Cliente cliente = null;
-        try {
-            session.beginTransaction();
-            cliente = session.get(Cliente.class, id);
-            session.getTransaction().commit();
-        } finally {
-            session.close();
-        }
-        return cliente;
-    }
-
     public void actualizarClientePorId(int id, String nuevoNombre, String nuevoTelefono, String nuevaDireccion) {
         Session session = factory.getCurrentSession();
         try {

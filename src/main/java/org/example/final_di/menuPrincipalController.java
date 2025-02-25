@@ -20,7 +20,7 @@ public class menuPrincipalController {
 
 
 
-
+    //Metodo para ir al XML de Clientes
     @FXML
     private void btnIrCliente() {
         try {
@@ -34,7 +34,7 @@ public class menuPrincipalController {
         }
     }
 
-
+    //Metodo para ir al XML de Pedidos
     @FXML
     private void btnIrPedidos() {
         try {
@@ -49,7 +49,7 @@ public class menuPrincipalController {
         }
     }
 
-
+    //Metodo para ir al XML de Productos
     @FXML
     private void btnIrProductos() {
         try {

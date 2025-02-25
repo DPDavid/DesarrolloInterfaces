@@ -22,12 +22,11 @@ public class Pedido {
 
     private LocalDateTime fecha;
 
-    @Column(insertable = false, updatable = false) // No editable en la BD
+    @Column(name = "total")
     private double total;
 
     private String estado;
 
-    // Constructor completo
     public Pedido(Cliente clienteSeleccionado, LocalDateTime fecha, Double totalPedido,String estado) {
         this.cliente = clienteSeleccionado;
         this.fecha = fecha;
@@ -35,10 +34,8 @@ public class Pedido {
         this.estado = estado;
     }
 
-    // Constructor vacío
     public Pedido() {}
 
-    // Getters y Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 

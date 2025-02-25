@@ -15,7 +15,6 @@ import java.util.List;
 public class PedidoRepository {
     private SessionFactory factory;
 
-    // Constructor
     public PedidoRepository() {
         factory = new Configuration().configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Pedido.class)
@@ -25,7 +24,6 @@ public class PedidoRepository {
                 .buildSessionFactory();
     }
 
-    // Método para guardar un pedido
     public void guardarPedido(Pedido pedido) {
         Session session = factory.getCurrentSession();
         try {
@@ -42,23 +40,6 @@ public class PedidoRepository {
         }
     }
 
-    // Obtener un pedido por ID
-    public Pedido obtenerPedidoPorId(int id) {
-        Session session = factory.getCurrentSession();
-        Pedido pedido = null;
-        try {
-            session.beginTransaction();
-            pedido = session.get(Pedido.class, id);
-            session.getTransaction().commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-        return pedido;
-    }
-
-    // Actualizar pedido (sin permitir cambiar el total)
     public void actualizarPedido(int id, String nuevoEstado) {
         Session session = factory.getCurrentSession();
         try {
@@ -82,7 +63,6 @@ public class PedidoRepository {
         }
     }
 
-    // Eliminar un pedido por ID
     public void eliminarPedidoPorId(int id) {
         Session session = factory.getCurrentSession();
         try {
@@ -104,13 +84,12 @@ public class PedidoRepository {
         }
     }
 
-    // Obtener todos los pedidos
     public List<Pedido> obtenerTodosLosPedidos() {
         Session session = factory.getCurrentSession();
         List<Pedido> pedidos = new ArrayList<>();
         try {
             session.beginTransaction();
-            pedidos = session.createQuery("from restaurante.Pedido", Pedido.class).getResultList();  // Corregido
+            pedidos = session.createQuery("from restaurante.Pedido", Pedido.class).getResultList();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -120,7 +99,6 @@ public class PedidoRepository {
         return pedidos;
     }
 
-    // Mostrar alertas
     private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
         Alert alerta = new Alert(tipo);
         alerta.setTitle(titulo);

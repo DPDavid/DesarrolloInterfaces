@@ -202,5 +202,37 @@
                 <Bloom threshold="0.09" />
             </effect>
         </Button>
+      <Button layoutX="296.0" layoutY="293.0" mnemonicParsing="false" onAction="#generarInforme" prefHeight="66.0" prefWidth="178.0" style="-fx-background-color: reansparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 6; -fx-border-width: 2;" text="Informe">
+         <font>
+            <Font name="Segoe Script Bold" size="26.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.20000000298023224" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007662835249042145">
+                     <color>
+                        <Color green="0.24316546320915222" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+         <effect>
+            <Bloom threshold="0.09" />
+         </effect>
+      </Button>
     </children>
 </AnchorPane>

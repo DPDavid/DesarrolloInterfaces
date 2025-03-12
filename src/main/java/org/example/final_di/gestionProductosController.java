@@ -1,5 +1,7 @@
 package org.example.final_di;
 
+import informes.InformeProductos;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
@@ -12,6 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import restaurante.Pedido;
 import restaurante.Productos;
 
 import restauranteRepository.ProductosRepository;
@@ -22,6 +25,9 @@ import java.util.regex.Pattern;
 public class gestionProductosController {
     @FXML
     private Button btnSalir;
+
+    private InformeProductos informeProductos= new InformeProductos();
+    private ProductosRepository productosRepository = new ProductosRepository();
 
     Pattern patternLetras = Pattern.compile("^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]*$");
     Pattern patternNumeros = Pattern.compile("^[\\d,.]+$");
@@ -230,6 +236,12 @@ public class gestionProductosController {
         Scene scene = new Scene(layout, 300, 200);
         ventanaEliminar.setScene(scene);
         ventanaEliminar.showAndWait();
+    }
+
+    @FXML
+    public void generarInforme(ActionEvent event){
+        List<Productos> productos = productosRepository.obtenerTodosLosProductos();
+        informeProductos.generarInforme(productos);
     }
 
     public void volverAlMenu() {

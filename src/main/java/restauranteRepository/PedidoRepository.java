@@ -99,6 +99,21 @@ public class PedidoRepository {
         return pedidos;
     }
 
+    public List<Pedido> obtenerTodosLosPedidosDisponibles(){
+        Session session = factory.getCurrentSession();
+        List<Pedido> pedidos = new ArrayList<>();
+        try {
+            session.beginTransaction();
+            pedidos = session.createQuery("from restaurante.Pedido where total < 5", Pedido.class).getResultList();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return pedidos;
+    }
+
     private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
         Alert alerta = new Alert(tipo);
         alerta.setTitle(titulo);

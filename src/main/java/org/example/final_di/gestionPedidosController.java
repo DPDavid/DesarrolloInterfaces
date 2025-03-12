@@ -1,5 +1,7 @@
     package org.example.final_di;
 
+    import informes.InformePedidos;
+    import javafx.event.ActionEvent;
     import javafx.fxml.FXML;
     import javafx.fxml.FXMLLoader;
     import javafx.scene.Scene;
@@ -24,6 +26,9 @@
     public class gestionPedidosController {
         @FXML
         private Button btnSalir;
+
+        private PedidoRepository pedidoRepository = new PedidoRepository();
+        private InformePedidos informePedidos = new InformePedidos();
 
         Pattern patternNumeros = Pattern.compile("^[\\d,.]+$");
 
@@ -236,6 +241,12 @@
             Scene scene = new Scene(layout, 300, 200);
             ventanaEliminar.setScene(scene);
             ventanaEliminar.showAndWait();
+        }
+
+        @FXML
+        public void generarInforme(ActionEvent event){
+            List<Pedido> pedidos = pedidoRepository.obtenerTodosLosPedidosDisponibles();
+            informePedidos.generarInforme(pedidos);
         }
 
         public void volverAlMenu() {

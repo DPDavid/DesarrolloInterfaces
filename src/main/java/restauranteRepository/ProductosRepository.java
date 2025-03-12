@@ -85,6 +85,7 @@ public class ProductosRepository {
         }
         return productos;
     }
+
     private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
         Alert alerta = new Alert(tipo);
         alerta.setTitle(titulo);

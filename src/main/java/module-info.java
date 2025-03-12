@@ -5,6 +5,7 @@ module org.example.final_di {
     requires java.persistence;
     requires org.hibernate.orm.core;
     requires java.naming;
+    requires jasperreports;
 
     opens org.example.final_di to javafx.fxml;
     opens restaurante to org.hibernate.orm.core;

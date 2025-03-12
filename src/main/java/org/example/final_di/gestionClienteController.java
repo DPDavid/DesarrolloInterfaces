@@ -1,5 +1,6 @@
 package org.example.final_di;
 
+import informes.InformeCliente;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,13 +11,18 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import restaurante.Cliente;
 import restauranteRepository.ClienteRepository;
+import javafx.event.ActionEvent;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
 public class gestionClienteController {
     @FXML
     private Button btnSalir;
+
+    private InformeCliente informeCliente = new InformeCliente();
+    private ClienteRepository clienteRepository = new ClienteRepository();
 
     Pattern patternLetras = Pattern.compile("^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]*$");
     Pattern patternNumeros = Pattern.compile("^\\d+$");
@@ -211,6 +217,12 @@ public class gestionClienteController {
         Scene scene = new Scene(layout, 300, 200);
         ventanaEliminar.setScene(scene);
         ventanaEliminar.showAndWait();
+    }
+
+    @FXML
+    public void generarInforme(ActionEvent event){
+        List<Cliente> clientes = clienteRepository.obtenerTodosLosClientes();
+        informeCliente.generarInforme(clientes);
     }
 
     public void volverAlMenu() {
